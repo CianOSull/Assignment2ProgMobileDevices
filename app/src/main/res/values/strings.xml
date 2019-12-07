@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Assignment2</string>
+
+    <string-array name="android_problems">
+        <item>Firebase install</item>
+        <item>Gradle scripts breaking</item>
+        <item>Three new projects and it still breaking</item>
+        <item>Build installer not installing everything</item>
+        <item>Working on other machines but not mine</item>
+    </string-array>
+</resources>
