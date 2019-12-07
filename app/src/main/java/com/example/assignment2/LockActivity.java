@@ -3,9 +3,11 @@ package com.example.assignment2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 
 public class LockActivity extends AppCompatActivity {
 
@@ -39,6 +41,20 @@ public class LockActivity extends AppCompatActivity {
         Button unlockActivityBtn = findViewById(R.id.unlockAcitvityBtn);
 
         // This is the slider bit
-        Slidr.attach(this);
+        final SlidrInterface slidr = Slidr.attach(this);
+
+        lockActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slidr.lock();
+            }
+        });
+
+        unlockActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slidr.unlock();
+            }
+        });
     }
 }
