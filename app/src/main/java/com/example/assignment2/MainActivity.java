@@ -144,6 +144,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         startActivity(startIntent);
     }
 
+    private void extraActivityPage(){
+        Intent startIntent = new Intent(getApplicationContext(), ExtraActivity.class);
+        startActivity(startIntent);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
@@ -196,9 +201,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(MainActivity.this,
-                                        "This page has not been implemented yet",
-                                        Toast.LENGTH_SHORT).show();
+                                extraActivityPage();
                             }
                         });
 

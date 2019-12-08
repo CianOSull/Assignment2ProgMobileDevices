@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".LockActivity"
             android:theme="@style/AppTheme.SliderActivityTheme"></activity>
-        <activity android:name=".ExtraActivity" />
+        <activity android:name=".ExtraActivity"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
