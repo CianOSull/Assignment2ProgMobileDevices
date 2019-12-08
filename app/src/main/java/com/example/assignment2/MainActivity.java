@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.context_menu, menu);
     }
 
     @Override

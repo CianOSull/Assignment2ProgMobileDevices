@@ -26,12 +26,4 @@
 
         </menu>
     </item>
-
-    <!-- These are items for the context menu -->
-    <item android:id="@+id/option_1"
-        android:title="Option 1" />
-
-    <item android:id="@+id/option_2"
-        android:title="Option 2" />
-
 </menu>
