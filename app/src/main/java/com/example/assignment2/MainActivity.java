@@ -1,8 +1,7 @@
 package com.example.assignment2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,6 +18,9 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -84,9 +86,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         changeActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), LockActivity.class);
-                startActivity(startIntent);
-
+                lockScreenPage();
             }
         });
 
@@ -110,6 +110,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+    }
+
+    private void lockScreenPage(){
+        Intent startIntent = new Intent(getApplicationContext(), LockActivity.class);
+        startActivity(startIntent);
     }
 
     @Override
@@ -136,6 +141,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (item.getItemId()) {
             case R.id.item1:
                 Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
+
+                // Create an alert dialog builders
+                AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+                // Create the alert dialog funcitonality
+                dialog.setMessage("This is a menu for other pages.");
+                dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Lock Activity",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                lockScreenPage();
+                            }
+                        });
+
+                dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Stay on main activity.",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this,
+                                        "You choose to stay on this page",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Go to extra activity",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this,
+                                        "This page has not been implemented yet",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                dialog.show();
+
                 return true;
 
             case R.id.item2:

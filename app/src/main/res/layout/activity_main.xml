@@ -59,7 +59,7 @@
             android:id="@+id/changeActivityBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Change Activities" />
+            android:text="Lock Activity" />
 
         <Space
             android:layout_width="match_parent"
