@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.AlarmManager;
 
 import android.annotation.TargetApi;
 import android.app.NotificationChannel;
@@ -8,6 +8,8 @@ import android.content.ContextWrapper;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
+
+import com.example.assignment2.R;
 
 public class NotificaitonHelper  extends ContextWrapper {
     public static final String channelID = "channelID";

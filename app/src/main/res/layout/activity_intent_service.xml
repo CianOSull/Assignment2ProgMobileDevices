@@ -34,5 +34,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Input Something" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="62dp" />
+
+        <Button
+            android:id="@+id/mainBackBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back To Main" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.AlarmManager;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

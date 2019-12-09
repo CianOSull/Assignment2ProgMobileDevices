@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.AlarmManager;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -13,6 +13,9 @@ import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+
+import com.example.assignment2.MainActivity;
+import com.example.assignment2.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;
