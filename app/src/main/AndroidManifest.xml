@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LockActivity"
-            android:theme="@style/AppTheme.SliderActivityTheme"></activity>
-        <activity android:name=".ExtraActivity"
+        <activity android:name=".AlarmActivity"></activity>
+        <activity
+            android:name=".LockActivity"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
+        <activity
+            android:name=".ExtraActivity"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -19,7 +22,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- Needed for background service -->
+        <service
+            android:name=".RSSPullService"
+            android:exported="false" />
+
+        <receiver android:name=".AlertReceiver" />
     </application>
 
 </manifest>

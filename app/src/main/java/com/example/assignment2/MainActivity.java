@@ -23,6 +23,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+/*
+* Advanced Activity 1: Alarm manager: https://www.youtube.com/watch?v=yrpimdBRk5Q
+* Advanced Activity 2: Serialization
+*/
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
@@ -149,6 +154,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         startActivity(startIntent);
     }
 
+    private void alarmActivity(){
+        Intent startIntent = new Intent(getApplicationContext(), AlarmActivity.class);
+        startActivity(startIntent);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
@@ -210,6 +220,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return true;
 
             case R.id.item2:
+                alarmActivity();
                 Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
                 return true;
 
