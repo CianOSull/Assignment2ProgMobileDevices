@@ -123,30 +123,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         registerForContextMenu(changeActivityBtn);
     }
 
-    // Context menu
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-
-        getMenuInflater().inflate(R.menu.context_menu, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.option_1:
-                Toast.makeText(this, "Option 1 selected", Toast.LENGTH_SHORT).show();
-                return true;
-
-            case R.id.option_2:
-                Toast.makeText(this, "Option 2 selected", Toast.LENGTH_SHORT).show();
-                return true;
-
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
     private void lockScreenPage(){
         Intent startIntent = new Intent(getApplicationContext(), LockActivity.class);
         startActivity(startIntent);
@@ -176,6 +152,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    // Context menu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        getMenuInflater().inflate(R.menu.context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.option_1:
+                alarmActivity();
+                Toast.makeText(this, "Option 1 selected", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.option_2:
+                intentServiceActivity();
+                Toast.makeText(this, "Option 2 selected", Toast.LENGTH_SHORT).show();
+                return true;
+
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     // This places the menu on main activity
